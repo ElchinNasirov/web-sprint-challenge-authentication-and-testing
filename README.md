@@ -25,12 +25,19 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Differences between using _sessions_ or _JSON Web Tokens_ for authentication.
+    - Session - After a user signs in, a session is securely created by the server. Then, that session ID is stored in a session cookie on the user’s browser. While the user remains logged in, the cookie is sent with every subsequent request. At each request, the server takes a look at the session cookie to read the session ID. If it matches the data stored in its memory, it sends a response back to the browser letting it know everything’s okay and ready to go. That’s when the session is authenticated and the user is free to browse the password-protected page. When they click to another protected page, the process repeats.
+    - JSON Web Tokens - When the user successfully logs in using his credentials, a JSON Web Token will be returned and must be saved locally (typically in local storage, but cookies can be also used), instead of the traditional approach of creating a session in the server and returning a cookie. Whenever the user wants to access a protected route, it should send the JWT, typically in the Authorization header using the Bearer schema. This is a stateless authentication mechanism as the user state is never saved in the server memory. 
 
 2. What does `bcrypt` do to help us store passwords in a secure manner.
+    - It hashes the password 
 
 3. How are unit tests different from integration and end-to-end testing.
+    - The idea of a "unit" in testing, is to break down the code into small, easily testable parts. Usually, the unit is a single function, but can also be a class or even a complex algorithm.
+
+    - End to end testing is a type of functional test. Unlike a unit test, you're not breaking the application down into smaller parts in order to test it - you're testing the entire application.
 
 4. How _Test Driven Development_ changes the way we write applications and tests.
+    - Test Driven Development approach first, the test is developed which specifies and validates what the code will do. In simple terms, test cases are created before code is written. The purpose of TDD is to make the code clearer, simple and bug-free.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
